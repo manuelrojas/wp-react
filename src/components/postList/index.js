@@ -4,7 +4,10 @@ import {bindActionCreators} from 'redux'
 import * as actions from 'actions/posts'
 import { Comment } from 'semantic-ui-react'
 
-const Item = ({ excerpt, date,  }) => (
+import { Switch, Route, Link, withRouter } from 'react-router-dom'
+
+
+const Item = ({ excerpt, date, id }) => (
   <Comment>
       <Comment.Content>
         <Comment.Author as='a'>Matt</Comment.Author>
@@ -14,9 +17,7 @@ const Item = ({ excerpt, date,  }) => (
         <Comment.Text>
           <span dangerouslySetInnerHTML={{ __html: excerpt && excerpt.rendered}}></span>
         </Comment.Text>
-        <Comment.Actions>
-          <Comment.Action>Author Profile</Comment.Action>
-        </Comment.Actions>
+        <Link to={`/posts/${id}`}>View</Link>
       </Comment.Content>
   </Comment>
 )
@@ -28,6 +29,12 @@ const List = ({ posts: { posts } }) => (
   </Comment.Group>
 )
 
+
+const Detailed = ({ posts: { posts } , id }) => {
+  let post = posts && posts.filter( item => item.id === parseInt(id, 10))[0]
+  return (<Item {...post} />)
+}
+
 class PostList extends React.Component {
     componentDidMount() {
       this.props.fetch();
@@ -35,12 +42,21 @@ class PostList extends React.Component {
 
     render() {
       const { posts } = this.props
-
       return (
-        <List posts={posts} />
-      )
+        <Switch>
+          <Route
+            exact
+            path="/"
+            component={ () => (<List posts={posts} />) }
+          />
+          <Route
+            path="/posts/:id"
+            component={({ match }) => ( <Detailed posts={posts} id={match.params.id} /> )}
+          />
+        </Switch>)
     }
 }
+
 
 function mapStateToProps(state){
     return {
@@ -52,4 +68,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators(actions, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostList);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostList));

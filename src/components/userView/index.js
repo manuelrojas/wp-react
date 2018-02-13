@@ -9,29 +9,28 @@ import * as actions from 'actions/users'
 const WordPressUser =  ({ user }) => {
   const imgSrc = user && user.avatar_urls && user.avatar_urls['96']
   return (
-  <Card>
-    <Image style={{height: '240px'}} src={imgSrc}/>
-    <Card.Content>
-      <Card.Header>
-        {user && user.name}
-      </Card.Header>
-      <Card.Meta>
-        <span className='date'>
-          Joined in 2015
-        </span>
-      </Card.Meta>
-      <Card.Description>
-        {user && user.description}
-      </Card.Description>
-    </Card.Content>
-    <Card.Content extra>
-      <a>
-        <Icon name='user' />
-        22 Friends
-      </a>
-    </Card.Content>
-  </Card>
-)
+    <Card>
+      <Image style={{height: '240px'}} src={imgSrc}/>
+      <Card.Content>
+        <Card.Header>
+          {user && user.name}
+        </Card.Header>
+        <Card.Meta>
+          <span className='date'>
+            Joined in 2015
+          </span>
+        </Card.Meta>
+        <Card.Description>
+          {user && user.description}
+        </Card.Description>
+      </Card.Content>
+      <Card.Content extra>
+          <a>
+            <Icon name='user' />
+            22 Friends
+          </a>
+      </Card.Content>
+    </Card>)
 }
 
 

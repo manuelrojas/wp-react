@@ -8,6 +8,8 @@ import PostList from 'components/postList'
 import { Provider } from 'react-redux'
 import configureStore from './store'
 
+import { HashRouter, Route } from 'react-router-dom'
+
 const View = () => (
   <div className="App">
     <header className="App-header">
@@ -24,7 +26,9 @@ class App extends Component {
     const store = configureStore()
     return (
       <Provider store={store}>
-        <View />
+        <HashRouter>
+          <Route path="/" component={View} />
+        </HashRouter>
       </Provider>
     )
   }
