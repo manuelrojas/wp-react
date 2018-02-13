@@ -38,11 +38,11 @@ const WordPressUser =  ({ user }) => {
 class UserView extends React.Component {
     componentDidMount() {
       console.log('componentDidMount')
-      this.props.getUser(1);
+      this.props.getUser(1)
     }
 
     render(){
-      const { user } = this.props;
+      const { user } = this.props
 
       return (
         <WordPressUser {...user} />
@@ -52,7 +52,7 @@ class UserView extends React.Component {
 
 function mapStateToProps(state){
     return {
-      user: state,
+      user: state.user,
     };
 }
 

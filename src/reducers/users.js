@@ -9,7 +9,7 @@ const initialState = {
   loading: false
 }
 
-const userReducer = (state = initialState, action) => {
+const user = (state = initialState, action) => {
   switch (action.type) {
     case _USER_FETCH:
       return {
@@ -34,4 +34,4 @@ const userReducer = (state = initialState, action) => {
   }
 }
 
-export default userReducer
+export default user

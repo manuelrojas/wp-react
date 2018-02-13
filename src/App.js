@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import logo from './logo.svg'
+import './App.css'
 
 import UserView from 'components/userView'
+import PostList from 'components/postList'
 
 import { Provider } from 'react-redux'
 import configureStore from './store'
@@ -14,6 +15,7 @@ const View = () => (
       <h1 className="App-title">Welcome to React</h1>
     </header>
     <UserView />
+    <PostList />
   </div>
 )
 
@@ -24,7 +26,7 @@ class App extends Component {
       <Provider store={store}>
         <View />
       </Provider>
-    );
+    )
   }
 }
 
