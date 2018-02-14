@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
+import header from './header.jpg'
 import './App.css'
 
 import UserView from 'components/userView'
@@ -13,9 +13,9 @@ import { HashRouter, Route } from 'react-router-dom'
 const View = () => (
   <div className="App">
     <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h1 className="App-title">Welcome to React</h1>
+      <img src={header} className="header-image" alt="logo" />
     </header>
+    <h2>Llamando el WORDPRESS REST API</h2>
     <UserView />
     <PostList />
   </div>

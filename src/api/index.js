@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BASE_URL =  'https://demo.wp-api.org/wp-json/wp/v2'
+const BASE_URL =  'https://elpuas.com/wp-json/wp/v2'
 
 const wpApi = axios.create({
     baseURL: BASE_URL,
