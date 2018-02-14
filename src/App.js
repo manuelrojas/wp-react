@@ -16,8 +16,14 @@ const View = () => (
       <img src={header} className="header-image" alt="logo" />
     </header>
     <h2>Llamando el WORDPRESS REST API</h2>
-    <UserView />
-    <PostList />
+    <div className="App-Main">
+      <div className="Col-Four">
+        <UserView />
+      </div>
+      <div className="Col-Eight">
+        <PostList />
+      </div>
+    </div>
   </div>
 )
 

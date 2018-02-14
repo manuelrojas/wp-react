@@ -1,14 +1,77 @@
+body {
+  background-color: #2E3A7D;
+}
+
 .App {
+  text-align: left;
+  margin: 20px;
+  border-radius: 25px;
+  overflow: hidden;
+  border: solid 1px #bce5f9;
+  padding-bottom: 40px;
+  background-color: white;
+  box-shadow: 0 0 8px #00000082;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Fredoka One', cursive;
+  color: #2E3A7D;
+}
+
+h2 {
+  font-size: 48px;
+  text-transform: uppercase;
   text-align: center;
+}
+
+h3 {
+  font-size: 24px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.App>h2:before, .App>h2:after {
+  content: '';
+  display: block;
+  width: 40%;
+  height: 2px;
+  background-color: #8AD1ED;
+  border-radius: 4px;
+  margin: 10px auto;
+}
+
+p, span, li {
+  font-family: 'Montserrat', sans-serif;
 }
 
 .App-header {
   width: 100vw
 }
 
-.App-header {
+.App-header img {
   width: 100%;
   max-width: 100%;
+}
+
+.App-Main {
+  padding: 2rem;
+}
+
+.App-Main p {
+  font-size: 18px;
+  line-height: 2rem;
+}
+
+.Col-Eight {
+  float: left;
+  width: 70%;
+  padding: 0 1rem;
+}
+
+.Col-Four {
+  float: left;
+  width: 30%;
+  padding: 0 1rem;
 }
 
 .App-title {
@@ -17,6 +80,52 @@
 
 .App-intro {
   font-size: large;
+}
+
+.comment .content>a:last-child {
+  color: white;
+  background: #2e3a7d;
+  padding: 0.5rem 2rem;
+  box-shadow: 4px 4px 0 #bce5f9;
+  display: block;
+  text-transform: uppercase;
+}
+
+.comment .content>a:last-child:hover {
+  color: white;
+  background: #2e3a7d;
+  padding: 0.5rem 2rem;
+  box-shadow: 1px 1px 0 #bce5f9;
+  margin-left: 1px;
+  margin-top: 1px;
+}
+
+.comments .comment {
+  margin: 3rem 0 !important;
+}
+
+.comments .comment:first-child {
+  margin: 0 0 3rem !important;
+}
+
+.ui.card {
+  background-color: #bce5f9;
+  border-color: #2E3A7D;
+}
+
+.ui.card .header {
+  font-family: 'Fredoka One', cursive !important;
+  color: #2E3A7D !important;
+  font-size: 36px !important;
+  text-shadow: -1px -1px 1px white;
+}
+
+.ui.card .meta .date {
+  color: white;
+}
+
+.ui.card .extra a {
+  color: white !important;
 }
 
 @keyframes App-logo-spin {
