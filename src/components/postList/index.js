@@ -22,17 +22,20 @@ const Item = ({ excerpt, date, id, title }) => (
   </Comment>
 )
 
-
 const List = ({ posts: { posts } }) => (
   <Comment.Group>
     {posts && posts.map(item => <Item key={item.id} {...item} />)}
   </Comment.Group>
 )
 
-
 const Detailed = ({ posts: { posts } , id }) => {
   let post = posts && posts.filter( item => item.id === parseInt(id, 10))[0]
-  return (<Item {...post} />)
+  return (
+    <div className="SinglePost__Container">
+      <h3 dangerouslySetInnerHTML={{ __html: post &&  post.title.rendered}}></h3>
+      <div dangerouslySetInnerHTML={{ __html: post && post.content.rendered}}></div>
+    </div>
+  )
 }
 
 class PostList extends React.Component {

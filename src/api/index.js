@@ -1,4 +1,4 @@
-import axios from 'axios'
+ import axios from 'axios'
 
 const BASE_URL =  'https://elpuas.com/wp-json/wp/v2'
 
@@ -14,7 +14,12 @@ const getUser = _id => {
   return wpApi.get(`/users/${_id}`)
 }
 
+const getPages = () => {
+  return wpApi.get('/pages/')
+}
+
 export default {
   getPosts,
-  getUser
+  getUser,
+  getPages,
 }
