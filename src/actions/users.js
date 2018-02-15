@@ -1,4 +1,4 @@
-import wpApi from '../api'
+import wpApi from 'api'
 import { trigger, triggerError } from 'actions'
 
 export const _USER_FETCH_LOADING = 'USER_LOADING'

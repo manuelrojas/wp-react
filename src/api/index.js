@@ -14,7 +14,12 @@ const getUser = _id => {
   return wpApi.get(`/users/${_id}`)
 }
 
+const getPages = () => {
+  return wpApi.get('/pages/')
+}
+
 export default {
   getPosts,
-  getUser
+  getUser,
+  getPages,
 }

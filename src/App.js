@@ -4,6 +4,7 @@ import './App.css'
 
 import UserView from 'components/userView'
 import PostList from 'components/postList'
+import PagesView from 'components/pagesView'
 
 import { Provider } from 'react-redux'
 import configureStore from './store'
@@ -19,6 +20,7 @@ const View = () => (
     <div className="App-Main">
       <div className="Col-Four">
         <UserView />
+        <PagesView />
       </div>
       <div className="Col-Eight">
         <PostList />
