@@ -7,12 +7,12 @@ import { Comment } from 'semantic-ui-react'
 import { Switch, Route, Link, withRouter } from 'react-router-dom'
 
 
-const Item = ({ excerpt, date, id }) => (
+const Item = ({ excerpt, date, id, title }) => (
   <Comment>
       <Comment.Content>
+        <h3 dangerouslySetInnerHTML={{ __html: title && title.rendered}}></h3>
         <Comment.Author as='a'>Matt</Comment.Author>
         <Comment.Metadata>
-          <div>Today at 5:42PM</div>
         </Comment.Metadata>
         <Comment.Text>
           <span dangerouslySetInnerHTML={{ __html: excerpt && excerpt.rendered}}></span>
