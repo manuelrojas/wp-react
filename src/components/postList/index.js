@@ -32,8 +32,8 @@ const Detailed = ({ posts: { posts } , id }) => {
   let post = posts && posts.filter( item => item.id === parseInt(id, 10))[0]
   return (
     <div className="SinglePost__Container">
-      <h3 dangerouslySetInnerHTML={{ __html: post.title && post.title.rendered}}></h3>
-      <div dangerouslySetInnerHTML={{ __html: post.excerpt && post.content.rendered}}></div>
+      <h3 dangerouslySetInnerHTML={{ __html: post &&  post.title.rendered}}></h3>
+      <div dangerouslySetInnerHTML={{ __html: post && post.content.rendered}}></div>
     </div>
   )
 }

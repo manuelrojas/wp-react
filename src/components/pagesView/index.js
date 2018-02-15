@@ -24,8 +24,8 @@ const Detailed = ({ pages: { pages } , id }) => {
   let page = pages && pages.filter( item => item.id === parseInt(id, 10))[0]
   return (
     <div className="PageView__Container">
-    <h3 dangerouslySetInnerHTML={{ __html: page.title && page.title.rendered}}></h3>
-    <div dangerouslySetInnerHTML={{ __html: page.excerpt && page.content.rendered}}></div>
+    <h3 dangerouslySetInnerHTML={{ __html: page && page.title.rendered}}></h3>
+    <div dangerouslySetInnerHTML={{ __html: page && page.content.rendered}}></div>
     </div>
   )
 }
