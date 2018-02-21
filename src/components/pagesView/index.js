@@ -21,7 +21,7 @@ const List = ({ pages: { pages } }) => (
 
 
 const Detailed = ({ pages: { pages } , id }) => {
-  let page = pages && pages.filter( item => item.id === parseInt(id, 10))[0]
+  let page = pages && pages.find( item => item.id === parseInt(id, 10))
   return (
     <div className="PageView__Container">
     <h3 dangerouslySetInnerHTML={{ __html: page && page.title.rendered}}></h3>
